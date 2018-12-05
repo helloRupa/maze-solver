@@ -1,0 +1,2 @@
+class MazeReader
+end
