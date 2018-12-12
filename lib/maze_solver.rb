@@ -50,10 +50,10 @@ class MazeSolver
 
   def bad_location?(coords, path)
     !in_bounds?(coords) || wall?(coords) || path.include?(coords) || \
-      in_circle?(coords, path) || inefficient_path?(coords, path)
+      in_circle?(coords, path) || snake?(coords, path)
   end
 
-  def inefficient_path?(coords, path)
+  def snake?(coords, path)
     return true if should_have_been_horizontal?(coords, path)
     should_have_been_vertical?(coords, path)
   end
