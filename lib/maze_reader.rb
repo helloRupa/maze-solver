@@ -1,5 +1,7 @@
 # Get file from user, convert it to array to provide to solver
 class MazeReader
+  private_class_method :new
+
   def self.make_array(filename)
     file = MazeReader.valid_file(filename)
     maze_array = []
@@ -31,5 +33,4 @@ end
 if $PROGRAM_NAME == __FILE__
   arr = MazeReader.make_array('maze1.txt')
   arr.each { |line| p line }
-  arr = MazeReader.make_array('bad_maze.txt')
 end
